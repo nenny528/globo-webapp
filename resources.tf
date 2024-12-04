@@ -64,6 +64,14 @@ resource "terraform_data" "webapp" {
     destination = "/home/ec2-user/application.config"
   }
 
+  connection {
+    type        = "ssh"
+    user        = "ec2-user"
+    port        = "22"
+    host        = aws_instance.main[0].public_ip
+    private_key = module.ssh_keys.private_key_openssh
+  }
+
 }
 
 resource "aws_lb" "main" {
