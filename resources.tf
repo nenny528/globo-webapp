@@ -64,7 +64,7 @@ resource "terraform_data" "webapp" {
     destination = "/home/ec2-user/application.config"
   }
 
-    connection {
+  connection {
     type        = "ssh"
     user        = "ec2-user"
     port        = "22"
