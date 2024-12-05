@@ -32,11 +32,6 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-variable "api_key" {
-  type        = string
-  description = "(Required) API key for web app to talk to SaaS platform."
-}
-
 variable "tfe_organization" {
   type        = string
   description = "(Required) tfe organization"
@@ -45,6 +40,16 @@ variable "tfe_organization" {
 variable "tfe_workspace_name" {
   type        = string
   description = "(Required) networking workspace name"
+}
+
+variable "api_key_secret_id" {
+  type        = string
+  description = "(Required) secret id for the api key id"
+}
+
+variable "ec2_role_name" {
+  type        = string
+  description = "(Required) EC2 role name for ec2 instance profile"
 }
 
 variable "playbook_repository" {
